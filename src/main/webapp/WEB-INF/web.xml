@@ -7,13 +7,13 @@
   <display-name>Archetype Created Web Application</display-name>
 
 <servlet>
-  <servlet-name>addcustomer</servlet-name>
-  <servlet-class>Servlets.addcustomer</servlet-class>
+  <servlet-name>RegisterUser</servlet-name>
+  <servlet-class>Servlets.register</servlet-class>
 </servlet>
   
   <servlet-mapping>
-    <servlet-name>addcustomer</servlet-name>
-    <url-pattern>/addcustomer</url-pattern>
+    <servlet-name>RegisterUser</servlet-name>
+    <url-pattern>/Signup</url-pattern>
   </servlet-mapping>
 
 <servlet>
