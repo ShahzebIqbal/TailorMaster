@@ -35,12 +35,6 @@ public class customer extends HttpServlet {
         String wrist = req.getParameter("c_wrist");
 
 
-        System.out.println("this line is working ");
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
-
-        out.println("<h1>Print : "+full_name+phone+front_pocket+side_pocket+collor_type+cloth_name+other_details+cuff+status+neck+chest+waist+shirt_length+half_shoulder+shoulder_width+arm_length+
-                inseam+wrist+"</h1>");
 
     }
 }
