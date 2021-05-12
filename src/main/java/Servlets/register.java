@@ -11,6 +11,8 @@ public class register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        System.out.println("Printing changes");
+        System.out.println("Printing changes");
 
 
 
