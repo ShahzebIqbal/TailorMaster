@@ -16,6 +16,7 @@ public class User {
     private String user_email;
     private String user_password;
     private String user_address;
+    private String user_phone;
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private List<customer> customers;
@@ -24,8 +25,9 @@ public class User {
         super();
     }
 
-    public User(int user_ID, String user_name, String user_email, String user_password, String user_address, List<customer> customers) {
+    public User(int user_ID, String user_name, String user_email, String user_password, String user_address, List<customer> customers,String  user_phone) {
         this.user_ID = user_ID;
+        this.user_phone = user_phone;
         this.user_name = user_name;
         this.user_email = user_email;
         this.user_password = user_password;
@@ -79,5 +81,13 @@ public class User {
 
     public void setCustomers(List<customer> customers) {
         this.customers = customers;
+    }
+
+    public String getUser_phone() {
+        return user_phone;
+    }
+
+    public void setUser_phone(String user_phone) {
+        this.user_phone = user_phone;
     }
 }

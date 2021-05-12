@@ -7,21 +7,22 @@ import javax.servlet.http.HttpServlet;
 
 public class FactoryProvider extends HttpServlet {
 
-    public static SessionFactory sessionFactory;
+    public static SessionFactory factory;
 
-    Configuration configuration = new Configuration();
+    public static SessionFactory getFactory(){
 
-    public static SessionFactory getSessionFactory ()
-    {
 
-        if (sessionFactory==null)
-        {
-            sessionFactory = new Configuration().configure().buildSessionFactory();
-
+        if (factory==null) {
+            factory = new Configuration().configure().buildSessionFactory();
         }
-        return sessionFactory;
+        return factory;
     }
+    public void closeFactory(){
 
-
+        if (factory.isOpen())
+        {
+            factory.close();
+        }
+    }
 
 }

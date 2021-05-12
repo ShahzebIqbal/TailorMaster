@@ -16,6 +16,8 @@
         <property name="format_sql">true</property>
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="hbm2ddl.auto">update</property>
+        <mapping class="com.enities.User"></mapping>
+        <mapping class="com.enities.customer"></mapping>
 
     </session-factory>
 

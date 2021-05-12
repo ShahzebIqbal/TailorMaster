@@ -13,7 +13,7 @@
   
   <servlet-mapping>
     <servlet-name>RegisterUser</servlet-name>
-    <url-pattern>/Signup</url-pattern>
+    <url-pattern>/register</url-pattern>
   </servlet-mapping>
 
 <servlet>
