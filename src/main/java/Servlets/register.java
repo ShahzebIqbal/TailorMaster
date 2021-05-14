@@ -27,7 +27,6 @@ public class register extends HttpServlet {
 
             User user = new User();
 
-            user.setUser_ID(1);
             user.setUser_name(user_name);
             user.setUser_email(user_email);
             user.setUser_password(user_password);

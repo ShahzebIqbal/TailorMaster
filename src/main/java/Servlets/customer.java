@@ -65,10 +65,11 @@ public class customer extends HttpServlet {
             List<Customer> list = new ArrayList();
 
             Customer customer = new Customer();
-
+//
             User user = new User();
+//            user.setUser_ID(Integer.parseInt(userID));
 
-            user.setUser_ID(Integer.parseInt(userID));
+//            customer.setUser(user);
             customer.setFull_name(full_name);
             customer.setPhone(phone);
             customer.setFront_pocket(front_pocket);

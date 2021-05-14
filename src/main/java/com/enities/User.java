@@ -3,12 +3,12 @@ package com.enities;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Random;
 
 @Entity
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int user_ID;
     private String user_name;
     private String user_email;
@@ -16,15 +16,15 @@ public class User {
     private String user_address;
     private String user_phone;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Customer> customers;
 
     public User() {
         super();
     }
 
-    public User(int user_ID, String user_name, String user_email, String user_password, String user_address, List<Customer> customers, String  user_phone) {
-        this.user_ID = user_ID;
+    public User(String user_name, String user_email, String user_password, String user_address, List<Customer> customers, String  user_phone) {
+        this.user_ID = new Random().nextInt(999999);
         this.user_phone = user_phone;
         this.user_name = user_name;
         this.user_email = user_email;
