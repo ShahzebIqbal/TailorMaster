@@ -1,15 +1,14 @@
 package com.enities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Random;
 
 @Entity
-public class customer {
+public class Customer {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int    ID;
     private String full_name;
     private String phone;
@@ -35,11 +34,11 @@ public class customer {
     @ManyToOne
     private User user;
 
-    public customer() {
+    public Customer() {
         super();
     }
 
-    public customer(String full_name, String phone, String front_pocket, String side_pocket, String collor_type, String cloth_name, String other_details, String cuff, String status, Date received_date, Date delivery_date, float neck, float chest, float waist, float shirt_length, float half_shoulder, float shoulder_width, float arm_length, float inseam, float wrist,User user) {
+    public Customer(String full_name, String phone, String front_pocket, String side_pocket, String collor_type, String cloth_name, String other_details, String cuff, String status, Date received_date, Date delivery_date, float neck, float chest, float waist, float shirt_length, float half_shoulder, float shoulder_width, float arm_length, float inseam, float wrist, User user) {
 
         this.ID                 = new Random().nextInt(99999999);
         this.full_name          = full_name;

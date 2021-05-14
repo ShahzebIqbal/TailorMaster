@@ -16,14 +16,14 @@ public class User {
     private String user_address;
     private String user_phone;
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    private List<customer> customers;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<Customer> customers;
 
     public User() {
         super();
     }
 
-    public User(int user_ID, String user_name, String user_email, String user_password, String user_address, List<customer> customers,String  user_phone) {
+    public User(int user_ID, String user_name, String user_email, String user_password, String user_address, List<Customer> customers, String  user_phone) {
         this.user_ID = user_ID;
         this.user_phone = user_phone;
         this.user_name = user_name;
@@ -73,11 +73,11 @@ public class User {
         this.user_address = user_address;
     }
 
-    public List<customer> getCustomers() {
+    public List<Customer> getCustomers() {
         return customers;
     }
 
-    public void setCustomers(List<customer> customers) {
+    public void setCustomers(List<Customer> customers) {
         this.customers = customers;
     }
 
