@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Random;
 
 public class register extends HttpServlet {
 
@@ -24,7 +25,6 @@ public class register extends HttpServlet {
         String user_password = req.getParameter("user_password");
    try {
             Session session = FactoryProvider.getFactory().openSession();
-
             User user = new User();
 
             user.setUser_name(user_name);

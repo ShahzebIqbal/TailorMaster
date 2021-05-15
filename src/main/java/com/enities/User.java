@@ -1,6 +1,7 @@
 package com.enities;
 
 
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Random;
@@ -8,29 +9,34 @@ import java.util.Random;
 @Entity
 public class User {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int user_ID;
+
+
+    private int userId;
     private String user_name;
     private String user_email;
     private String user_password;
     private String user_address;
     private String user_phone;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany
     private List<Customer> customers;
 
     public User() {
         super();
     }
 
-    public User(String user_name, String user_email, String user_password, String user_address, List<Customer> customers, String  user_phone) {
-        this.user_ID = new Random().nextInt(999999);
+    public User(int user_ID,String user_name, String user_email, String user_password, String user_address, List<Customer> customers, String  user_phone) {
+
+        this.user_ID = user_ID;
         this.user_phone = user_phone;
         this.user_name = user_name;
         this.user_email = user_email;
         this.user_password = user_password;
         this.user_address = user_address;
         this.customers = customers;
+
     }
 
     public int getUser_ID() {

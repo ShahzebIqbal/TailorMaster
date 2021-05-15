@@ -31,7 +31,7 @@ public class Customer {
     private float inseam;
     private float wrist;
 
-    @ManyToOne
+   @ManyToOne
     private User user;
 
     public Customer() {
